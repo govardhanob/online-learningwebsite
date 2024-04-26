@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-F0ZwO8Gx5gx0VUsxT9ajI1nqM4d3N3ttSPTLEPAfYwazsmK3O1ZNViJw3Zo3fdvxPe6v5MR0q0+gHdJ2XWf1Xw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      #c1{
+        background: rgba( 255, 255, 255, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 15.5px );
+-webkit-backdrop-filter: blur( 15.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+      }
+    </style>
+</head>
+
+    <body>
+        
+        <header class="p-4 mb-3 border-bottom" style="background-color: #912BBC;">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                  <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+        
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                  <li><a href="index" class="nav-link px-2 link-secondary text-black">Online Classroom</a></li>
+                  <!-- <li><a href="/profile{{user.email}}" class="nav-link px-2 link-body-emphasis">Student</a></li> -->
+                  <!-- <li><a href="#" class="nav-link px-2 link-body-emphasis">Whishlist</a></li>  -->
+                  <li><a href="/profile{{user.email}}" class="nav-link px-2 link-body-emphasis">Home</a></li>
+                </ul>
+        
+                <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+         -->
+                <div class="dropdown text-end">
+                  <a href="#" class="d-block link-body-emphasis text-decoration-none " data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{user.profilepic.url}}" alt="mdo" width="32" height="32" class="rounded-circle dropdown-toggle">
+                  </a>
+                  <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="updateprofile">My Profile</a></li>
+                    <!-- <li><a class="dropdown-item" href="#">Whishlist</a></li>
+                    <li><a class="dropdown-item" href="#">My Cart</a></li> -->
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="whishlist">Whishlist</a></li>
+
+                    <li><a class="dropdown-item" href="signout">Sign out</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </header>
+    <main>
+        <section class="h-100" >
+            <div class="container h-100 py-5">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-10">
+          
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-normal mb-0 text-black">My Cart</h3>
+                    
+                  </div>
+                {% if cart %}
+                {% for i in cart %}
+                  <div class="card rounded-3 mb-2" id="c1">
+                    <div class="card-body p-1">
+                      <div class="row d-flex justify-content-between align-items-center">
+                        <div class=" col-3 col-md-1 col-xl-1 col-xxl-1">
+                          <img
+                            src="{{i.thumbnail.url}}"
+                            class="img-fluid rounded-3" alt="Cotton T-shirt">
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                          <p class="lead fw-normal mb-2">{{i.coursename}}</p>
+                          <p><span class="text-muted">Category: </span>{{i.coursecategory}} <br><span class="text-muted">
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                          <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                            <i class="fas fa-minus"></i>
+                          </button>
+          
+                          
+          
+                          <button class="btn btn-link px-2"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                          <h5 class="mb-0">₹ {{i.fees}}</h5>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 text-end">
+                          <a href="deletingcart{{i.courseid}}" class="text-danger" style="color: red; ">Move to whishlist</a>
+                        </div>
+                        
+                     </div>
+                     
+                    </div>
+                    </div>
+                    {% endfor %}
+                    
+                    
+                    <div class="card" >
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <a href="payment"><button style="background-color: #007bff;" type="button" class="btn btn-lg">Proceed to Pay</button></a>
+
+                            <p class="mb-0" style="font-weight: bolder;">Total  ₹ {{ sum }}</p>
+                        </div>
+                      </div>
+
+
+                   </div>
+                </div>
+            </div>
+            {% else %}
+            <h2 style="text-align: center;">Your Cart Is Empty</h2>
+          {% endif %}
+          
+                  
+                
+              </div>
+            </div>
+          </section>
+    </main>
+    
+   
+    
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+        
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     
+</body>
+</html>

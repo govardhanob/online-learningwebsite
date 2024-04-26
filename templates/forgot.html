@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="{% static '../static/css/register.css' %}">
+</head>
+<body>
+
+<div class="signup-form">
+    <h2>Reset password</h2>
+    
+    </p>
+    <form action="updatepassword" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="email" placeholder="Enter the email" required >
+       
+       
+        
+        <button type="submit">Login</button><br><br>
+        
+    </form>
+</div>
+
+</body>
+</html>

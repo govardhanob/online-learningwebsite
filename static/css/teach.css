@@ -1,0 +1,73 @@
+
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    margin-left: 20px;
+    
+}
+
+select{
+    appearance: none; /* Remove default arrow in some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333" width="18px" height="18px"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 18px;
+    cursor: pointer;
+}
+/* Style for the select dropdown */
+select,input {
+    margin-left: 20px;
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family:cursive;
+    
+    cursor: pointer;
+}
+
+/* Style for the select dropdown when hovered */
+select:hover {
+    border-color: #666;
+}
+
+/* Style for the select dropdown when focused */
+select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+img {
+    float: right;
+    margin-left: 20px; /* Add margin to create some space between the image and the content */
+}
+textarea{
+    margin-left: 20px;
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    
+   
+    cursor: pointer;
+}
+
+#sub{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #8710D8 ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

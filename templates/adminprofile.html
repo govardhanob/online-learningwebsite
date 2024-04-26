@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+     Dashboard 
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="../static/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../static/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../static/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../static/css/argon-dashboard.css" rel="stylesheet" />
+  <style>
+    #sidenav-main.show {
+    transform: translateX(0);
+}
+
+/* Adjust transition speed if needed */
+#sidenav-main {
+    transition: transform 0.3s ease;
+}
+input{
+    width: 60%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid black 1px;
+    font-weight: lighter;
+    font-size: 13px;
+    
+}
+#btn1{
+    background-color: #8576FF;
+    border-radius: 10px;
+    width: 100px;
+    border: 1px solid black;
+}
+#btn2{
+    background-color: #8576FF;
+    border-radius: 10px;
+    width: 100px;
+    border: 1px solid black;
+}
+  </style>
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
+        <span class="ms-1 font-weight-bold"> Dashboard </span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item" >
+          <a class="nav-link " href="adminpage">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link  " href="course">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Courses</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item " >
+          <a class="nav-link  " href="billing">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Billing</span>
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link " href="adminrating">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Rating</span>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="adminprofile">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="ni ni-app text-info text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Profile</span>
+            </a>
+          </li>
+          
+        
+      </ul>
+    </div>
+    
+     
+  </aside>
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">admin profile</li>
+          </ol>
+          <h6 class="font-weight-bolder text-white mb-0">Profile</h6>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            <!-- <div class="input-group">
+              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="Type here...">
+            </div> -->
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                </div>
+              </a>
+            </li>
+              
+                    
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="row">
+        
+      </div>
+      </div>
+       
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header pb-0">
+                <div class="table-responsive p-0">
+                     <form action="adminprofileupdate" method="post">
+                        {% csrf_token %}
+                            <label for="name">Username:</label><br>
+                        <input type="hidden" name="id" id="" value="{{admin.id}}">
+                        <input type="text" name="username" id="" value="{{admin.username}}" ><br><br>
+                        <label for="fiestname">Firstname:</label><br>
+                        <input type="text" name="firstname" id="" value="{{admin.first_name}}">
+                        <br><br>
+                        <label for="lastname">Lastname:</label><br>
+                        <input type="text" name="lastname" id="" value="{{admin.last_name}}"><br><br>
+                        <label for="email">Email:</label><br>
+                        <input type="text" name="email" value="{{admin.email}}">
+                        <br><br>
+                        <label for="email">Password:</label><br>
+                        <input type="password" name="password" id="" required placeholder="Enter your password.."><br><br>
+                        {% for i in messages%} 
+                        <p style="color: red;">{{i}}</p>
+                       {% endfor %}
+                        <button type="submit" id="btn1">Update</button>
+                     </form>
+                <hr>
+                <form action="updatepassword" method="post">
+                  {% csrf_token %}
+                  <input type="hidden" name="email" id="" value="{{admin.email}}">
+                  <button type="submit" id="btn2" style="width: 150px;">Update Password</button>
+               </form><br>
+                <form action="adminsignout" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="" id="">
+                    <button type="submit" id="btn2">Signout</button>
+                </form>
+                
+                </div>
+                
+          <script src="../static/js/perfect-scrollbar.min.js"></script>
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+    const iconNavbarSidenav = document.getElementById("iconNavbarSidenav");
+    const sidenavMain = document.getElementById("sidenav-main");
+
+    iconNavbarSidenav.addEventListener("click", function() {
+        sidenavMain.classList.toggle("show");
+    });
+});
+          </script>
+  
+</body>
+
+</html>
