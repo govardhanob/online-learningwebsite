@@ -13,9 +13,7 @@ Features:
 
 
 
-## Screenshots
 
-![App Screenshot](https://github.com/govardhanob/online-learningwebsite/blob/main/Screenshot%202024-04-25%20201535.png)
 
 
 ## Lessons Learned
